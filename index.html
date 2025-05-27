@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Расчет теплопроводности нитиноловой проволоки</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Расчет теплопроводности нитиноловой проволоки</h1>
+
+      <label for="diameter">Диаметр проволоки (мм):</label>
+      <select id="diameter">
+        <option value="0.1">0.1</option>
+        <option value="0.3">0.3</option>
+        <option value="1">1</option>
+      </select>
+
+      <label for="length">Длина проволоки (мм):</label>
+      <select id="length">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+      </select>
+
+      <label for="power">Мощность нагрева (Вт):</label>
+      <input type="number" id="power" min="1" max="100" value="10" step="1" />
+
+      <label for="ambientTemp">Температура окружающей среды (°C):</label>
+      <input
+        type="number"
+        id="ambientTemp"
+        min="-50"
+        max="50"
+        value="20"
+        step="1"
+      />
+
+      <button onclick="calculate()">Рассчитать</button>
+
+      <div id="results"></div>
+      <div id="formulas"></div>
+      <div id="analysis"></div>
+
+      <canvas id="tempChart" width="400" height="200"></canvas>
+      <canvas id="linearChart" width="400" height="200"></canvas>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
